@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 class="text-center display-4 font-weight-bold font-italic">Alta de Proveedor</h1>
+
+<form method="POST" enctype="multipart/form-data">{% csrf_token %}    
+    <div class="alert alert-info">
+        <div clas="row m-7 justify-content-center align-items-center">
+            <strong>Informacion:</strong> 
+            <br>
+            Complete los datos principales de cada nuevo preventista
+        </div>
+    </div>
+    
+    <div class="row mt-5 justify-content-center align-items-center">
+        <table>
+            {{form.as_table}}
+        </table>
+    </div>
+
+    <div class="row m-0 justify-content-center mt-4">
+        <button class="btn btn-primary text-dark row col-3" type="submit" data-toggle="tooltip" data-placement="right" title="Agregar"><i class="fa-solid fa-user-plus"></i></button>
+    </div>
+
+    <div class="row m-0 justify-content-center mt-4">
+        <a href="{% url 'preventista_app:panel-proveedor'%}" class="fa-solid fa-rotate-left btn btn-primary row col-3" data-toggle="tooltip" data-placement="right" title="Volver"></a>
+    </div>
+
+</form>
+
+{% endblock content %}

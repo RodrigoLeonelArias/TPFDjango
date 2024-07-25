@@ -1,0 +1,14 @@
+{% extends 'base' %}
+
+
+{% block content %}
+
+<ul>
+    {% for cliente in clientes %}
+            <li>{{cliente.nombre}}</li>
+            <li>{{cliente.apellido}}</li>
+            <li>{{cliente.dni}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

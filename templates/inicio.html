@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block home %}
+<style>
+    .carousel-inner img {
+        width: 80%;
+        height: 100%;
+      }
+</style>
+    
+<nav class="navbar navbar-expand-sm bg-dark p-2 navbar-dark p-2 justify-content-center sticky-top">
+    <!-- Boton desplegables -->
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
+        <a class="navbar-brand" href="#">
+            <i class="fa-solid fa-shop"></i>
+        </a>
+    </div>
+    
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar"> 
+        <!-- Links Preventistas-->
+        <ul class="navbar-nav">             
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cliente_app:panel-cliente'%}">CLIENTES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'producto_app:panel-producto'%}">PRODUCTOS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'preventista_app:panel-proveedor'%}">PROVEEDORES</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar"> 
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown dropleft">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  API REST
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cliente_app:api-cliente'%}" target="_blank">Clientes</a>
+                    <a class="dropdown-item" href="{% url 'producto_app:api-producto'%}" target="_blank" >Productos</a>
+                    <a class="dropdown-item" href="{% url 'preventista_app:api-proveedor'%}" target="_blank" >Preventistas</a>
+                </div>
+              </li>
+        </ul>
+    </div>
+
+</nav>
+    <!--CARRUSEL-->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- INDICADORES CARRUSEL -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+        </ul>
+      
+        <!-- DIAPOSITIVAS -->
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img class="img-fluid mx-auto d-block" src="{% static 'media/c1.webp'%}" alt="bienvenido">
+                <div class="carousel-caption">
+                    <h3 class="display-4 bg-dark font-italic "><i class="fa-solid fa-house"></i> BIENVENIDO <i class="fa-solid fa-house"></i></h3>
+                    <p class="bg-dark p-2">Este sistema de gestion le permitira realizar funciones de alta, baja, modificacion y creacion de registros</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <img class="img-fluid mx-auto d-block"  src="{% static 'media/Cliente/c2.png'%}" alt="clientes">
+                <div class="carousel-caption">
+                    <h3 class="display-4 bg-dark font-italic"><i class="fa-solid fa-users"></i> CLIENTES <i class="fa-solid fa-users"></i></h3>
+                    <p class="bg-dark p-2">Registre sus clientes</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <img class="img-fluid mx-auto d-block" src="{% static 'media/Producto/c3.webp'%}" alt="productos" style="width: 75%;">
+                <div class="carousel-caption">
+                    <h3 class="display-4 bg-dark font-italic"><i class="fa-solid fa-boxes-packing"></i> PRODUCTOS <i class="fa-solid fa-boxes-packing"></i></h3>
+                    <p class="bg-dark p-2">Lleve un control completo y detallado de sus productos</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="img-fluid mx-auto d-block" src="{% static 'media/Preventista/c4.webp'%}" alt="proveedores" style="width: 65%;">
+              <div class="carousel-caption">
+                    <h3 class="display-4 bg-dark p-2 font-italic"><i class="fa-solid fa-truck-field"></i> PREVENTISTAS <i class="fa-solid fa-truck-field"></i></h3>
+                    <p class="bg-dark p-2">Gestione los proveedores que necesita su negocio</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--CONTROLES DE DIAPOSITIVAS (DERECHA O IZQUIERDA) -->
+    <div>
+        <!-- IZQUIERDA-->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark"></span>
+        </a>
+
+        <!-- DERECHA -->
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon bg-dark"></span>
+        </a>
+      
+    </div>
+
+{% endblock home %}

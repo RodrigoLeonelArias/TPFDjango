@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h3 class="text-center display-4 font-weight-bold font-italic">PREVENTISTA</h3>
+
+<div class="row mt-3 justify-content-center">
+    
+    <div class="card mt-5" style="width: 400px;">
+        {% if detalle.avatar %}
+            <img class="card-img-top" src="{{ detalle.avatar.url }}" alt="">
+        {% else %}
+            <img class="card-img-top" src="{% static 'media/Preventista/user.png' %}" alt="">
+        {% endif %}
+            
+
+        <div class="card-body">
+            <p class="card-text">Nombre: {{detalle.nombre}}</p>
+            <p class="card-text">Rubro: {{detalle.rubro}}</p>
+            <p class="card-text">Domicilio: {{detalle.domicilio}}</p>
+
+            
+            <a href="{% url 'producto_app:panel-producto'%}" class="fa-solid fa-rotate-left btn btn-primary row col-10 ml-4 "></a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base' %}
+
+
+{% block content %}
+
+<ul>
+    {% for producto in productos %}
+            <li>Identificador: {{detalle.identificador}}</li> 
+            <li>Nombre: {{detalle.nombre}}</li>
+            <li>Tipo: {{detalle.tipo}}</li>
+            <li>Marca de producto: {{detalle.marcaProd}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
